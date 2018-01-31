@@ -16,11 +16,11 @@ module Binance
           when :get
             response = get(path, headers: all_headers, query: params)
           when :post
-            response = post(path, body: params, headers: all_headers)
+            response = post(path, headers: all_headers, query: params)
           when :put
-            response = put(path, body: params, headers: all_headers)
+            response = put(path, headers: all_headers, query: params)
           when :delete
-            response = delete(path, body: params, headers: all_headers)
+            response = delete(path, headers: all_headers, query: params)
           else
             raise Error.new(message: "invalid http method used: #{method}")
           end
